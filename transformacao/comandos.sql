@@ -7,7 +7,7 @@ ALTER TABLE pedidos_full DROP COLUMN valor_pizza;
 ALTER TABLE pedidos_full DROP COLUMN valor_entrega;
 ALTER TABLE pedidos_full DROP COLUMN hora_entrega;
 
-//transforma data
+/*transforma data*/
 delimiter $$
 CREATE FUNCTION transforma_data(data_pedido date) 
 RETURNS varchar(20)
@@ -37,7 +37,7 @@ END $$
 delimiter;
 
 
-//transforma hora
+/*transforma hora*/
 delimiter $$
 CREATE FUNCTION transforma_hora(hora_pedido time) 
 RETURNS varchar(20)
@@ -58,7 +58,7 @@ END $$
 
 delimiter;
 
-//transforma borda
+/*transforma borda*/
 DELIMITER $$
 CREATE FUNCTION transforma_borda(valor_borda float) 
 RETURNS varchar(20)
@@ -80,7 +80,7 @@ END $$
 delimiter;
 
 
-//transforma refrigerante
+/*transforma refrigerante*/
 DELIMITER $$
 CREATE FUNCTION transforma_refrigerante(valor_refrigerante float) 
 RETURNS varchar(20)
@@ -102,34 +102,10 @@ END $$
 delimiter;
 
 
-//importar o transforma_valor
+/*importar o transforma_valor*/
 SELECT transforma_valor(valor_total) from pedidos_full;
 
-//uso do histograma em python
-import numpy as np
-import matplotlib.pyplot as plt
-
-dados = np.genfromtxt('tempo_decorrido.csv')
-#histograma = plt.hist(dados, bins="sturges")
-#histograma = plt.hist(dados, bins="scott")
-#histograma = plt.hist(dados, bins="fd")
-histograma = plt.hist(dados, bins=4)
-#histograma = plt.hist(dados)
-
-plt.show()
-
-
-dados = np.genfromtxt('tempo_decorrido.csv')
-#histograma = plt.hist(dados, bins="sturges")
-#histograma = plt.hist(dados, bins="scott")
-#histograma = plt.hist(dados, bins="fd")
-histograma = plt.hist(dados, bins=4)
-#histograma = plt.hist(dados)
-
-plt.show()
-
-
-//transforma valor
+/*transforma valor*/
 DELIMITER $$
 CREATE FUNCTION transforma_valor(valor_total float) 
 RETURNS varchar(20)
@@ -163,7 +139,7 @@ END $$
 
 delimiter;
 
-//transforma tempo
+/*transforma tempo*/
 DELIMITER $$
 CREATE FUNCTION transforma_tempo(tempo time) 
 RETURNS varchar(20)
@@ -183,4 +159,5 @@ BEGIN
 END $$
 DELIMITER;
 
+/*Seleção geral*/
 SELECT transforma_data(data_pedido), transforma_hora(hora_pedido), tipo_entrega, transforma_borda(valor_borda), transforma_refrigerante(valor_refrigerante), transforma_valor(valor_total), transforma_tempo(tempo) FROM pedidos_full;
