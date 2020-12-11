@@ -8,6 +8,6 @@ Este repositório faz referência à um trabalho sobre KDD (Knowledge Discovery 
   <li>descricao/... (Descrição do trabalho e relatório final da atividade);</li>
   <li>selecao/database.sql (Comandos sql para importação do banco de dados pizzaria);</li>
   <li>transformacao/comandos.sql (Comandos sql para transformação dos dados já importados);</li>
-  <li>numpy-matplotlib/histograma.py (Código python para criação de histogramas);</li>
+  <li>numpy-matplotlib/histograma.py (Código python para criação de histogramas utilizando a matplotlib);</li>
   <li>pandas-apriori/apriori.py (Código python para mineração de dados por meio do algoritmo apriori);</li>
 </ul>
