@@ -1,4 +1,4 @@
-# python-kdd
+# Descoberta de Conhecimento em Python
 
 Este repositório faz referência à um trabalho sobre KDD (Knowledge Discovery in Databases) da disciplina de Banco de Dados II no IFSULDEMINAS - Campus Passos. Durante o trabalho foram abordadas todas as etapas de KDD, tendo como base de dados um arquivo com pedidos de uma pizzaria.
 
