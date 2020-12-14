@@ -38,7 +38,8 @@ CREATE TABLE `pedidos_full` (
 ```
 
 <h2>Transformação e Limpeza dos Dados</h2>
-Para algumas funções foi necessário antes codificar em python histogramas que representassem intervalos definidos. Esses histogramas foram gerados com auxílio da biblioteca matplotlib.</br>
+
+Para algumas funções foi necessário antes codificar em python histogramas que representassem intervalos definidos. Esses histogramas foram gerados com auxílio da biblioteca <b>matplotlib</b>.
 
 ```
 #código Python para criação de histogramas
@@ -83,7 +84,7 @@ SELECT transforma_data(data_pedido), transforma_hora(hora_pedido), tipo_entrega,
 
 ```
 
-Após isso, bastou codificar o algoritmo utilizando o pandas.
+Após isso, bastou codificar o algoritmo utilizando o <b>pandas</b>.
 
 ```
 #importação de bibliotecas
