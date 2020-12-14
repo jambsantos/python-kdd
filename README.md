@@ -112,7 +112,7 @@ END $$
 delimiter;
 ```
 
-Outras funções criadas
+<b>Outras funções criadas:</b>
 
 ```
 
