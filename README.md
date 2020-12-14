@@ -38,7 +38,6 @@ CREATE TABLE `pedidos_full` (
 ```
 <h2> Transformação dos Dados </h2>
 
-<h3>Descarte de colunas inutilizáveis</h3>
 ```
 ALTER TABLE pedidos_full DROP COLUMN numero;
 ALTER TABLE pedidos_full DROP COLUMN cliente;
@@ -73,7 +72,6 @@ BEGIN
     RETURN tempo2;
 END $$
 DELIMITER;
-
 ```
 
 ```
