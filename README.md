@@ -49,4 +49,4 @@ ALTER TABLE pedidos_full DROP COLUMN telefone;
 ALTER TABLE pedidos_full DROP COLUMN valor_pizza;
 ALTER TABLE pedidos_full DROP COLUMN valor_entrega;
 ALTER TABLE pedidos_full DROP COLUMN hora_entrega;
-
+```
