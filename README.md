@@ -41,14 +41,35 @@ CREATE TABLE `pedidos_full` (
 Para algumas funções foi necessário antes codificar em python histogramas que representassem intervalos definidos.
 
 ```
-#histograma do tempo_decorrido disponibilizado na descrição
+#código Python para criação de histogramas
 dados = np.genfromtxt('tempo_decorrido.csv')
 histograma = plt.hist(dados, bins="scott")
 #histograma = plt.hist(dados, bins=4)
 plt.show()
 ```
 
-
-
 <img width="400px" height="300px" align="center" src="numpy-matplotlib/dados1.png">
 
+```
+/*transforma tempo*/
+DELIMITER $$
+CREATE FUNCTION transforma_tempo(tempo time) 
+RETURNS varchar(20)
+BEGIN
+    DECLARE tempo2 varchar(20);
+    IF(tempo >= '00:10:00' AND tempo <= '00:22:00') THEN
+        SET tempo2 = 'tp 10-22';
+    ELSEIF(tempo > '00:22:00' AND tempo <= '00:32:00') THEN
+        SET tempo2 = 'tp 22-33';
+    ELSEIF(tempo > '00:32:00' AND tempo <= '00:43:00') THEN
+        SET tempo2 = 'tp 33-44';
+    ELSEIF(tempo > '00:43:00' AND tempo <= '00:55:00') THEN
+        SET tempo2 = 'tp 44-55';
+
+    END IF;
+    RETURN tempo2;
+END $$
+DELIMITER;
+
+```
+As demais funções podem ser verificadas no arquivo comandos.sql na pasta <i>transformacao</i>
