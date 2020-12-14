@@ -51,8 +51,8 @@ ALTER TABLE pedidos_full DROP COLUMN hora_entrega;
 
 Histogramas gerados para função de transformação das colunas tempo_pedido e valor_pedido<br>
 
-<img width="300px" height="300px" src="numpy-matplotlib/dados1.png">
-<img width="300px" height="300px" src="numpy-matplotlib/dados2.png">
+<img width="400px" height="300px" src="numpy-matplotlib/dados1.png">
+<img width="400px" height="300px" src="numpy-matplotlib/dados2.png">
 
 ```
 DELIMITER $$
