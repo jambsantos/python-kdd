@@ -38,7 +38,7 @@ CREATE TABLE `pedidos_full` (
 ```
 
 <h2>Transformação e Limpeza dos Dados</h2>
-Para algumas funções foi necessário antes codificar em python histogramas que representassem intervalos definidos. Esses histogramas foram gerados com auxílio da biblioteca matplotlib.
+Para algumas funções foi necessário antes codificar em python histogramas que representassem intervalos definidos. Esses histogramas foram gerados com auxílio da biblioteca matplotlib.</br>
 
 ```
 #código Python para criação de histogramas
