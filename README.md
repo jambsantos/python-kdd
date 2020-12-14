@@ -38,7 +38,7 @@ CREATE TABLE `pedidos_full` (
 ```
 <h2> Transformação dos Dados </h2>
 
-Descarte de colunas inutilizáveis
+<b>Descarte de colunas inutilizáveis</b>
 
 ```
 ALTER TABLE pedidos_full DROP COLUMN numero;
@@ -50,7 +50,7 @@ ALTER TABLE pedidos_full DROP COLUMN valor_entrega;
 ALTER TABLE pedidos_full DROP COLUMN hora_entrega;
 ```
 
-Histogramas gerados para função de transformação das colunas tempo_pedido e valor_pedido<br>
+<b>Histogramas gerados para função de transformação das colunas tempo_pedido e valor_pedido</b><br>
 
 <img width="400px" height="300px" src="numpy-matplotlib/dados1.png">
 <img width="400px" height="300px" src="numpy-matplotlib/dados2.png">
