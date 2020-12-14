@@ -3,7 +3,7 @@
 Este repositório faz referência à um trabalho sobre KDD (Knowledge Discovery in Databases) da disciplina de Banco de Dados II. Durante o trabalho foram abordadas todas as etapas de KDD, tendo como base de dados um arquivo com pedidos de uma pizzaria.
 
 
-<h2> Seleção </h2>
+<h2> Seleção do Banco de Dados </h2>
 
 SQL para criação do banco pizzaria e da tabela pedidos_full. Os dados para inserção podem ser importados através do <b>.csv</b> disponibilizado na pasta <b>selecao</b> ou através do SQL de inserção contido do arquivo <b>database.sql</b>
 
@@ -36,7 +36,7 @@ CREATE TABLE `pedidos_full` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 ```
-<h2> Transformação </h2>
+<h2> Transformação dos Dados </h2>
 
 Descarte de colunas inutilizáveis
 ```
@@ -49,13 +49,36 @@ ALTER TABLE pedidos_full DROP COLUMN valor_entrega;
 ALTER TABLE pedidos_full DROP COLUMN hora_entrega;
 ```
 
-    Histogramas gerados para função de transformação de valor e tempo
-    <img width="300px" height="300px" src="numpy-matplotlib/dados1.png">
+Transformação de colunas através de análise de histograma
+
+Histogramas gerados para função de transformação das colunas tempo_pedido e valor_pedido<br>
+
+<img width="400px" height="300px" src="numpy-matplotlib/dados1.png">
+<img width="400px" height="300px" src="numpy-matplotlib/dados2.png">
 
 ```
-/*importar o transforma_valor*/
-SELECT transforma_valor(valor_total) from pedidos_full;
+DELIMITER $$
+CREATE FUNCTION transforma_tempo(tempo time) 
+RETURNS varchar(20)
+BEGIN
+    DECLARE tempo2 varchar(20);
+    IF(tempo >= '00:10:00' AND tempo <= '00:22:00') THEN
+        SET tempo2 = 'tp 10-22';
+    ELSEIF(tempo > '00:22:00' AND tempo <= '00:32:00') THEN
+        SET tempo2 = 'tp 22-33';
+    ELSEIF(tempo > '00:32:00' AND tempo <= '00:43:00') THEN
+        SET tempo2 = 'tp 33-44';
+    ELSEIF(tempo > '00:43:00' AND tempo <= '00:55:00') THEN
+        SET tempo2 = 'tp 44-55';
 
+    END IF;
+    RETURN tempo2;
+END $$
+DELIMITER;
+
+```
+
+```
 /*transforma valor*/
 DELIMITER $$
 CREATE FUNCTION transforma_valor(valor_total float) 
