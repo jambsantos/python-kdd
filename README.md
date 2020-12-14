@@ -36,3 +36,19 @@ CREATE TABLE `pedidos_full` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 ```
+
+<h2>Transformação e Limpeza dos Dados</h2>
+Para algumas funções foi necessário antes codificar em python histogramas que representassem intervalos definidos.
+
+```
+#histograma do tempo_decorrido disponibilizado na descrição
+dados = np.genfromtxt('tempo_decorrido.csv')
+histograma = plt.hist(dados, bins="scott")
+#histograma = plt.hist(dados, bins=4)
+plt.show()
+```
+
+
+
+<img width="400px" height="300px" align="center" src="numpy-matplotlib/dados1">
+
