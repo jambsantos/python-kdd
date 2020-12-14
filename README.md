@@ -36,8 +36,10 @@ CREATE TABLE `pedidos_full` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 ```
+
 <h2>Transformação e Limpeza dos Dados</h2>
 Para algumas funções foi necessário antes codificar em python histogramas que representassem intervalos definidos. Esses histogramas foram gerados com auxílio da biblioteca matplotlib.
+
 ```
 #código Python para criação de histogramas
 dados = np.genfromtxt('tempo_decorrido.csv')
@@ -45,7 +47,9 @@ histograma = plt.hist(dados, bins="scott")
 #histograma = plt.hist(dados, bins=4)
 plt.show()
 ```
+
 <img width="400px" height="300px" align="center" src="numpy-matplotlib/dados1.png">
+
 ```
 /*transforma tempo*/
 DELIMITER $$
@@ -73,12 +77,14 @@ As demais funções podem ser verificadas no arquivo comandos.sql na pasta <i>tr
 <h2> Algoritmo Apriori</h2>
 
 Para a execução do algoritmo apriori foi necessário exportar uma seleção geral com as funções que foram implementadas;
+
 ```
 SELECT transforma_data(data_pedido), transforma_hora(hora_pedido), tipo_entrega, transforma_borda(valor_borda), transforma_refrigerante(valor_refrigerante), transforma_valor(valor_total), transforma_tempo(tempo) FROM pedidos_full;
 
 ```
 
 Após isso, bastou codificar o algoritmo utilizando o pandas.
+
 ```
 #importação de bibliotecas
 import numpy as np
@@ -125,10 +131,3 @@ for item in resultado_associacoes:
     
     print (sugestao)
 ```
-
-
-
-
-
-
-
