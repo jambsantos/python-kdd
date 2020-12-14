@@ -40,7 +40,6 @@ CREATE TABLE `pedidos_full` (
 
 Descarte de colunas inutilizáveis
 
-
 ```
 ALTER TABLE pedidos_full DROP COLUMN numero;
 ALTER TABLE pedidos_full DROP COLUMN cliente;
@@ -50,3 +49,47 @@ ALTER TABLE pedidos_full DROP COLUMN valor_pizza;
 ALTER TABLE pedidos_full DROP COLUMN valor_entrega;
 ALTER TABLE pedidos_full DROP COLUMN hora_entrega;
 ```
+
+Histogramas gerados para função de transformação de valor e tempo
+
+<img src="numpy-matplotlib/dados1.png">
+
+```
+/*importar o transforma_valor*/
+SELECT transforma_valor(valor_total) from pedidos_full;
+
+/*transforma valor*/
+DELIMITER $$
+CREATE FUNCTION transforma_valor(valor_total float) 
+RETURNS varchar(20)
+
+BEGIN
+    DECLARE preco varchar(20);
+    IF(valor_total>= 10 AND valor_total <= 13) THEN
+        SET preco = 'vl 10-13';
+    ELSEIF(valor_total> 13 AND valor_total <= 16) THEN
+        SET preco = 'vl 13-16';
+    ELSEIF(valor_total> 16 AND valor_total <= 20) THEN
+        SET preco = 'vl 16-20';
+    ELSEIF(valor_total> 20 AND valor_total <= 24) THEN
+        SET preco = 'vl 20-24';
+    ELSEIF(valor_total> 24 AND valor_total <= 28) THEN
+        SET preco = 'vl 24-28';    
+    ELSEIF(valor_total> 28 AND valor_total <= 32) THEN
+        SET preco = 'vl 28-32'; 
+    ELSEIF(valor_total> 32 AND valor_total <= 36) THEN
+        SET preco = 'vl 32-36';
+    ELSEIF(valor_total> 36 AND valor_total <= 40) THEN
+        SET preco = 'vl 36-40';
+    ELSEIF(valor_total> 40 AND valor_total <= 44) THEN
+        SET preco = 'vl 40-44';
+    ELSEIF(valor_total> 44 AND valor_total <= 50) THEN
+        SET preco = 'vl 44-50';
+    END IF;
+    RETURN preco;
+
+END $$
+
+delimiter;
+```
+
