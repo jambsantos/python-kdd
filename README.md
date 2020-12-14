@@ -50,5 +50,5 @@ plt.show()
 
 
 
-<img width="400px" height="300px" align="center" src="numpy-matplotlib/dados1">
+<img width="400px" height="300px" align="center" src="numpy-matplotlib/dados1.png">
 
