@@ -36,3 +36,16 @@ CREATE TABLE `pedidos_full` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 ```
+<h2> Transformação </h2>
+
+Descarte de colunas inutilizáveis
+
+
+```
+ALTER TABLE pedidos_full DROP COLUMN numero;
+ALTER TABLE pedidos_full DROP COLUMN cliente;
+ALTER TABLE pedidos_full DROP COLUMN endereco;
+ALTER TABLE pedidos_full DROP COLUMN telefone;
+ALTER TABLE pedidos_full DROP COLUMN valor_pizza;
+ALTER TABLE pedidos_full DROP COLUMN valor_entrega;
+ALTER TABLE pedidos_full DROP COLUMN hora_entrega;```
