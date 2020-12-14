@@ -101,10 +101,6 @@ END $$
 
 delimiter;
 
-
-/*importar o transforma_valor*/
-SELECT transforma_valor(valor_total) from pedidos_full;
-
 /*transforma valor*/
 DELIMITER $$
 CREATE FUNCTION transforma_valor(valor_total float) 
@@ -158,6 +154,3 @@ BEGIN
     RETURN tempo2;
 END $$
 DELIMITER;
-
-/*Seleção geral*/
-SELECT transforma_data(data_pedido), transforma_hora(hora_pedido), tipo_entrega, transforma_borda(valor_borda), transforma_refrigerante(valor_refrigerante), transforma_valor(valor_total), transforma_tempo(tempo) FROM pedidos_full;
