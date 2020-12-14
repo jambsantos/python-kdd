@@ -36,10 +36,8 @@ CREATE TABLE `pedidos_full` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 ```
-
 <h2>Transformação e Limpeza dos Dados</h2>
 Para algumas funções foi necessário antes codificar em python histogramas que representassem intervalos definidos. Esses histogramas foram gerados com auxílio da biblioteca matplotlib.
-
 ```
 #código Python para criação de histogramas
 dados = np.genfromtxt('tempo_decorrido.csv')
@@ -47,9 +45,7 @@ histograma = plt.hist(dados, bins="scott")
 #histograma = plt.hist(dados, bins=4)
 plt.show()
 ```
-
 <img width="400px" height="300px" align="center" src="numpy-matplotlib/dados1.png">
-
 ```
 /*transforma tempo*/
 DELIMITER $$
@@ -72,7 +68,7 @@ END $$
 DELIMITER;
 
 ```
-As demais funções podem ser verificadas no arquivo comandos.sql na pasta <i>transformacao</i>
+As demais funções podem ser verificadas no arquivo comandos.sql na pasta <i>transformacao</i>.
 
 <h2> Algoritmo Apriori</h2>
 
