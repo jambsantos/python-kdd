@@ -112,3 +112,108 @@ END $$
 delimiter;
 ```
 
+Outras funções criadas
+
+```
+
+/*transforma data*/
+delimiter $$
+CREATE FUNCTION transforma_data(data_pedido date) 
+RETURNS varchar(20)
+
+ BEGIN
+    DECLARE dia varchar(20);
+    if(dayofweek(data_pedido) = 1) THEN
+        set dia = 'Domingo';
+    ELSEIF(dayofweek(data_pedido) = 2) THEN
+        set dia = 'Segunda';
+    ELSEIF(dayofweek(data_pedido) = 3) THEN
+        set dia = 'Terça';
+    ELSEIF(dayofweek(data_pedido) = 4) THEN
+        set dia = 'Quarta';
+    ELSEIF(dayofweek(data_pedido) = 5) THEN
+        set dia = 'Quinta';
+    ELSEIF(dayofweek(data_pedido) = 6) THEN
+        set dia = 'Sexta';    
+    ELSEIF(dayofweek(data_pedido) = 7) THEN
+        set dia = 'Sábado';
+    end IF;
+
+    RETURN dia;
+
+END $$
+
+delimiter;
+```
+
+```
+
+/*transforma hora*/
+delimiter $$
+CREATE FUNCTION transforma_hora(hora_pedido time) 
+RETURNS varchar(20)
+
+ BEGIN
+    DECLARE periodo varchar(20);
+    if(hora_pedido < '20:00:00') THEN
+        set periodo = 'Inicio';
+    ELSEIF(hora_pedido >= '20:00:00' and hora_pedido < '22:00:00') THEN
+        set periodo = 'Pico';
+    ELSEIF(hora_pedido >= '22:00:00') THEN
+        set periodo = 'Final';
+    end IF;
+
+    RETURN periodo;
+
+END $$
+
+delimiter;
+```
+
+```
+
+/*transforma borda*/
+DELIMITER $$
+CREATE FUNCTION transforma_borda(valor_borda float) 
+RETURNS varchar(20)
+
+BEGIN
+    
+	DECLARE borda varchar(20);
+    if(valor_borda > 0) THEN
+        set borda = 'Borda sim';
+    ELSEIF(valor_borda <=0) THEN
+        set borda = 'Borda não';
+    end IF;
+
+    RETURN borda;
+
+
+END $$
+
+delimiter;
+```
+```
+/*transforma refrigerante*/
+DELIMITER $$
+CREATE FUNCTION transforma_refrigerante(valor_refrigerante float) 
+RETURNS varchar(20)
+
+BEGIN
+    
+	DECLARE refrigerante varchar(20);
+    if(valor_refrigerante > 0) THEN
+        set refrigerante = 'Refrigerante sim';
+    ELSEIF(valor_refrigerante <=0) THEN
+        set refrigerante = 'Refrigerante não';
+    end IF;
+
+    RETURN refrigerante;
+
+
+END $$
+
+delimiter;
+```
+
+
