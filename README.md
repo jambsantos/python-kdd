@@ -49,8 +49,6 @@ ALTER TABLE pedidos_full DROP COLUMN valor_entrega;
 ALTER TABLE pedidos_full DROP COLUMN hora_entrega;
 ```
 
-Transformação de colunas através de análise de histograma
-
 Histogramas gerados para função de transformação das colunas tempo_pedido e valor_pedido<br>
 
 <img width="400px" height="300px" src="numpy-matplotlib/dados1.png">
