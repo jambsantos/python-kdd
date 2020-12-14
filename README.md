@@ -38,6 +38,8 @@ CREATE TABLE `pedidos_full` (
 ```
 <h2> Transformação dos Dados </h2>
 
+Descarte de colunas inutilizáveis
+
 ```
 ALTER TABLE pedidos_full DROP COLUMN numero;
 ALTER TABLE pedidos_full DROP COLUMN cliente;
