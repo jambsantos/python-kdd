@@ -5,7 +5,7 @@ Este repositório faz referência à um trabalho sobre KDD (Knowledge Discovery 
 
 <h2> Banco de Dados </h2>
 
-SQL para criação do banco pizzaria e da tabela pedidos_full. Os dados para inserção podem ser importados através do <b>.csv</b> disponibilizado na pasta <b>selecao</b> ou através do SQL de inserção contido do arquivo <b>database.sql.</b>
+SQL para criação do banco pizzaria e da tabela pedidos_full. Os dados podem ser importados através do <b>.csv</b> disponibilizado na pasta <b>selecao</b> ou através do SQL de inserção contido do arquivo <b>database.sql.</b>
 
 ```
 CREATE DATABASE  IF NOT EXISTS `pizzaria`;
