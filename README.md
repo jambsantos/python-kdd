@@ -3,7 +3,7 @@
 Este repositório faz referência à um trabalho sobre KDD (Knowledge Discovery in Databases) da disciplina de Banco de Dados II. Durante o trabalho foram abordadas todas as etapas de KDD, tendo como base de dados um arquivo com pedidos de uma pizzaria.
 
 <h2> Tecnologias Utilizadas </h2>
-As seguintes ferramentas foram usadas na construção do projeto:
+As seguintes ferramentas foram usadas na construção do projeto:</br>
 
 - [MySQL](https://www.mysql.com/)
 - [Python](https://www.python.org/)
