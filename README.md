@@ -9,7 +9,7 @@ Este repositório faz referência à um trabalho sobre Knowledge Discovery in Da
 
 <h2> Banco de Dados </h2>
 
-O SQL abaixo descreve a tabela pedidos_full. A importação completa poder ser feita por meio do arquivo <b>database.sql</b> disponibilizado na pasta <i>selecao</i>.
+O SQL abaixo descreve a tabela <b>pedidos_full</b> do banco <b>pizzaria</b>. A importação completa poder ser feita por meio do arquivo <b>database.sql</b> disponibilizado na pasta <i>selecao</i>.
 
 ```
 CREATE DATABASE  IF NOT EXISTS `pizzaria`;
