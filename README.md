@@ -1,6 +1,6 @@
 # Descoberta de conhecimento em Python
 
-Este repositório faz referência à um trabalho sobre KDD (Knowledge Discovery in Databases) da disciplina de Banco de Dados II. Durante o trabalho foram abordadas todas as etapas de KDD, tendo como base de dados um arquivo com pedidos de uma pizzaria.
+Este repositório faz referência à um trabalho sobre Knowledge Discovery in Databases (KDD) da disciplina de Banco de Dados II. Durante a execução foram abordadas todas as etapas de KDD, tendo como base de dados um arquivo com pedidos de uma pizzaria.
 
 <h2> Tecnologias Utilizadas </h2>
 
@@ -9,7 +9,7 @@ Este repositório faz referência à um trabalho sobre KDD (Knowledge Discovery 
 
 <h2> Banco de Dados </h2>
 
-O SQL abaixo faz descrição sobre a tabela pedidos_full. A importação completa poder ser feita por meio do arquivo <b>database.sql</b> disponibilizado na pasta <i>selecao</i>.
+O SQL abaixo descreve a tabela pedidos_full. A importação completa poder ser feita por meio do arquivo <b>database.sql</b> disponibilizado na pasta <i>selecao</i>.
 
 ```
 CREATE DATABASE  IF NOT EXISTS `pizzaria`;
@@ -77,18 +77,18 @@ END $$
 DELIMITER;
 
 ```
-As demais funções podem ser verificadas no arquivo comandos.sql na pasta <i>transformacao</i>.
+As demais funções podem ser verificadas no arquivo <b>comandos.sql</b> na pasta <i>transformacao</i>.
 
 <h2> Algoritmo Apriori</h2>
 
-Para a execução do algoritmo apriori exportou-se uma seleção geral com as funções que foram implementadas;
+Para a execução do apriori exportou-se uma seleção geral com as funções que foram implementadas;
 
 ```
 SELECT transforma_data(data_pedido), transforma_hora(hora_pedido), tipo_entrega, transforma_borda(valor_borda), transforma_refrigerante(valor_refrigerante), transforma_valor(valor_total), transforma_tempo(tempo) FROM pedidos_full;
 
 ```
 
-Após isso, bastou codificar o algoritmo utilizando o <b>pandas</b>.
+O cógio abaixo descreve todo o funcionamento do algoritmo apriori.
 
 ```
 #importação de bibliotecas
