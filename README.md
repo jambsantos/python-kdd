@@ -1,4 +1,4 @@
-# Descoberta de Conhecimento em Python
+# Descoberta de conhecimento em Python
 
 Este repositório faz referência à um trabalho sobre KDD (Knowledge Discovery in Databases) da disciplina de Banco de Dados II. Durante o trabalho foram abordadas todas as etapas de KDD, tendo como base de dados um arquivo com pedidos de uma pizzaria.
 
@@ -9,7 +9,7 @@ Este repositório faz referência à um trabalho sobre KDD (Knowledge Discovery 
 
 <h2> Banco de Dados </h2>
 
-SQL para criação do banco pizzaria e da tabela pedidos_full. Os dados podem ser importados através do <b>.csv</b> disponibilizado na pasta <b>selecao</b> ou através do SQL de inserção contido do arquivo <b>database.sql.</b>
+O SQL abaixo faz descrição sobre a tabela pedidos_full. A importação completa poder ser feita por meio do arquivo <b>database.sql</b> disponibilizado na pasta <i>selecao</i>.
 
 ```
 CREATE DATABASE  IF NOT EXISTS `pizzaria`;
@@ -43,7 +43,7 @@ CREATE TABLE `pedidos_full` (
 
 <h2>Transformação e Limpeza dos Dados</h2>
 
-Para algumas funções foi necessário antes codificar em python histogramas que representassem intervalos definidos. Esses histogramas foram gerados com auxílio da biblioteca <b>matplotlib</b>.
+Para algumas funções foi necessário codificar histogramas que representassem intervalos definidos. Esses histogramas foram gerados com auxílio da biblioteca <b>matplotlib</b> do Python.
 
 ```
 #código Python para criação de histogramas
@@ -81,7 +81,7 @@ As demais funções podem ser verificadas no arquivo comandos.sql na pasta <i>tr
 
 <h2> Algoritmo Apriori</h2>
 
-Para a execução do algoritmo apriori foi necessário exportar uma seleção geral com as funções que foram implementadas;
+Para a execução do algoritmo apriori exportou-se uma seleção geral com as funções que foram implementadas;
 
 ```
 SELECT transforma_data(data_pedido), transforma_hora(hora_pedido), tipo_entrega, transforma_borda(valor_borda), transforma_refrigerante(valor_refrigerante), transforma_valor(valor_total), transforma_tempo(tempo) FROM pedidos_full;
