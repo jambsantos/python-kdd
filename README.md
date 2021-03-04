@@ -2,12 +2,12 @@
 
 Este repositório faz referência à um trabalho sobre Knowledge Discovery in Databases (KDD) da disciplina de Banco de Dados II. Durante a execução foram abordadas todas as etapas de KDD, tendo como base de dados um arquivo com pedidos de uma pizzaria.
 
-<h2> Tecnologias Utilizadas </h2>
+<h2> Tecnologias utilizadas </h2>
 
 - [MySQL](https://www.mysql.com/)
 - [Python](https://www.python.org/)
 
-<h2> Banco de Dados </h2>
+<h2> Banco de dados </h2>
 
 O SQL abaixo descreve a tabela <b>pedidos_full</b> do banco <b>pizzaria</b>. A importação completa poder ser feita por meio do arquivo <b>database.sql</b> disponibilizado na pasta <i>selecao</i>.
 
@@ -41,7 +41,7 @@ CREATE TABLE `pedidos_full` (
 
 ```
 
-<h2>Transformação e Limpeza dos Dados</h2>
+<h2>Transformação e limpeza dos dados</h2>
 
 Para algumas funções foi necessário codificar histogramas que representassem intervalos definidos. Esses histogramas foram gerados com auxílio da biblioteca <b>matplotlib</b> do Python.
 
